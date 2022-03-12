@@ -1,0 +1,23 @@
+aliyun.afreto.top {
+  encode gzip
+  root /* /root/xray_web
+  file_server
+  reverse_proxy /ray 127.0.0.1:10000 {
+    #websocket
+    #header_upstream -Origin
+    header_up -Origin
+  }
+}
+
+web.xray.aliyun.afreto.top {
+  root * /root/xray_web
+  file_server
+}
+
+v2ray.sub.afreto.top {
+  templates
+  # root * /root/sub/test.yaml
+  file_server browse {
+    root /root
+ }
+}
