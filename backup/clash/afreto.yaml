@@ -18,7 +18,7 @@ proxies:
     servername: aliyun.afreto.top
     network: ws
     ws-opts:
-      path: /ray
+      path: /fire
       headers:
         Host: aliyun.afreto.top
     #   max-early-data: 2048
