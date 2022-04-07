@@ -2,7 +2,7 @@
 ## bwg
 ```
 bwg.afreto.top  28260 root
-H9iqqRiFLb8R
+5JJOKI54RNfu
 ```
 ### aliyun
 ```
