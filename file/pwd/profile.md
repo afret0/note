@@ -274,10 +274,16 @@ admin
 739627
 ```
 
- # 淘宝
+# 淘宝
 
 ```
 18435155427
-
 Konglingyu2745
+```
+
+# v2rayA
+v2ray.pi.afreto.top
+```
+afreto
+konglingyu2745
 ```
