@@ -1,0 +1,14 @@
+version: '3'
+services:
+  frpc:
+    container_name: frpc
+    image: snowdreamtech/frpc
+    volumes: 
+      - /etc/frp/:/etc/frp
+    restart: always
+    network_mode: host
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+    
