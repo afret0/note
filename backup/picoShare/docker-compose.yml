@@ -6,7 +6,7 @@ services:
     image: mtlynch/picoshare
     environment: 
       - PORT=10115
-      - PS_SHARED_SECRET=somesecretpass
+      - PS_SHARED_SECRET=qpzm2745
     ports:
       - 10115:10115
     restart: unless-stopped
