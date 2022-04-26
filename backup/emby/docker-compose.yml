@@ -5,9 +5,9 @@ services:
     container_name: embyserver
     # network_mode: brige # Enable DLNA and Wake-on-Lan
     environment:
-      - UID=1000 # The UID to run emby as (default: 2)
-      - GID=100 # The GID to run emby as (default 2)
-      - GIDLIST=100 # A comma-separated list of additional GIDs to run emby as (default: 2)
+      - UID=0 # The UID to run emby as (default: 2)
+      - GID=0 # The GID to run emby as (default 2)
+      # - GIDLIST=100 # A comma-separated list of additional GIDs to run emby as (default: 2)
     volumes:
       - /etc/emby:/config # Configuration directory
       - /data/disk1/emby/share1:/mnt/share1 # Media directory
