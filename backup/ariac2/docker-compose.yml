@@ -18,8 +18,8 @@ services:
       - CUSTOM_TRACKER_URL=
       - TZ=Asia/Shanghai
     volumes:
-      - ${PWD}/aria2-config:/config
-      - ${PWD}/aria2-downloads:/downloads
+      - /etc/aria2-config:/config
+      - /data/disk1/aria2-downloads:/downloads
 # If you use host network mode, then no port mapping is required.
 # This is the easiest way to use IPv6 networks.
     # network_mode: host
@@ -39,11 +39,11 @@ services:
   AriaNg:
     container_name: ariang
     image: p3terx/ariang
-    command: --port 6880 --ipv6
+    command: --port 10113 --ipv6
     # network_mode: host
     # network_mode: bridge
     ports:
-      - 6880:6880
+      - 10113:10113
     restart: unless-stopped
     logging:
       driver: json-file
