@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  AriaNg:
+    container_name: picoshare
+    image: mtlynch/picoshare
+    environment: 
+      - PORT=10115
+      - PS_SHARED_SECRET=somesecretpass
+    ports:
+      - 10115:10115
+    restart: unless-stopped
+    volumes:
+      - /data/disk1/picoshare:/data
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
