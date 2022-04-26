@@ -3,7 +3,7 @@ services:
   emby:
     image: emby/embyserver_arm64v8
     container_name: embyserver
-    network_mode: host # Enable DLNA and Wake-on-Lan
+    network_mode: brige # Enable DLNA and Wake-on-Lan
     environment:
       - UID=1000 # The UID to run emby as (default: 2)
       - GID=100 # The GID to run emby as (default 2)
