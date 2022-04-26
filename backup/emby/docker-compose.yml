@@ -13,7 +13,7 @@ services:
       - /data/disk1/emby/share1:/mnt/share1 # Media directory
       - /data/disk1/emby/share2:/mnt/share2 # Media directory
     ports:
-      - 10110:8096 # HTTP port
+      - 10112:8096 # HTTP port
       # - 8920:8920 # HTTPS port
     # devices:
       # - /dev/dri:/dev/dri # VAAPI/NVDEC/NVENC render nodes
