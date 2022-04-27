@@ -3,7 +3,7 @@ version: "3"
 services:
   AriaNg:
     container_name: freshrss
-    image: freshrss/freshrss
+    image: freshrss/freshrss:edge-arm
     environment: 
       - TZ=Asia/Shanghai
       - 'CRON_MIN=1,31'
