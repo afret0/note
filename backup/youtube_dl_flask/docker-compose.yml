@@ -1,0 +1,9 @@
+version: '3'
+
+
+services:
+    youtube-dl:
+    image: "recodeuk/youtube-dl-flask"
+    volumes:
+      - /data/disk1/emby/share1:/youtube-dl
+    restart: always
