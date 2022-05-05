@@ -1,0 +1,22 @@
+aliyun.afreto.top {
+  encode gzip
+  root /* /data/xray_web
+  file_server
+  reverse_proxy /fire 127.0.0.1:10000 {
+    header_up -Origin
+  }
+}
+
+freshrss.afreto.top {
+  encode gzip
+  reverse_proxy * http://127.0.0.1:10110
+}
+
+file.afreto.top {
+  templates
+  file_server browse {
+    root /data
+    hide caddy xray_web
+    precompressed zstd br gzip
+  }
+}

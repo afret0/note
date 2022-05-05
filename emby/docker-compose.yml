@@ -1,0 +1,21 @@
+version: "3"
+services:
+  emby:
+    image: emby/embyserver_arm64v8
+    container_name: embyserver
+    # network_mode: brige # Enable DLNA and Wake-on-Lan
+    environment:
+      - UID=0 # The UID to run emby as (default: 2)
+      - GID=0 # The GID to run emby as (default 2)
+      # - GIDLIST=100 # A comma-separated list of additional GIDs to run emby as (default: 2)
+    volumes:
+      - /etc/emby:/config # Configuration directory
+      - /data/disk1/emby/share1:/mnt/share1 # Media directory
+      - /data/disk1/emby/share2:/mnt/share2 # Media directory
+    ports:
+      - 10112:8096 # HTTP port
+      # - 8920:8920 # HTTPS port
+    # devices:
+      # - /dev/dri:/dev/dri # VAAPI/NVDEC/NVENC render nodes
+      # - /dev/vchiq:/dev/vchiq # MMAL/OMX on Raspberry Pi
+    restart: unless-stopped
