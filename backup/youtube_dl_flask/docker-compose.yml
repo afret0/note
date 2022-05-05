@@ -3,7 +3,7 @@ version: '3'
 
 services:
     youtube-dl:
-    image: "recodeuk/youtube-dl-flask"
+    image: recodeuk/youtube-dl-flask
     ports:
       - 10117:80
     volumes:
