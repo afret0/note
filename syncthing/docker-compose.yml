@@ -1,13 +1,15 @@
 version: '3'
 services:
   syncthing:
-    image: syncthing/syncthing
+    image: linuxserver/syncthing:latest
     container_name: syncthing
     environment:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /data/disk1/syncthing:/var/syncthing
+      - /etc/syncthing:/config
+      - /data/disk1/syncthing:/data1
+      - /data/disk1/syncthing:/data2
     ports:
       - 10117:8384 # Web UI
       - 22000:22000
