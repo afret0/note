@@ -1,6 +1,11 @@
 version: '3'
+
 services:
-  redis: redis
-  ports: 6379:6379
-  volumes: /etc/redis:/usr/local/etc/redis/
-  restart: unless-stopped
+    redis_test:
+        image: redis
+        ports: 6379:6479
+        volumes: 
+            - /etc/redis:/usr/local/etc/redis/
+            - /data/redis/data:/data
+        restart: unless-stopped
+    
