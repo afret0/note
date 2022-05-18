@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-    redis_dev:
-        container_name: redis_dev
+    redis:
+        container_name: redis
         image: redis
         ports: 
             - 6379:6379
