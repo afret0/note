@@ -2,8 +2,8 @@ version: '2'
 
 services:
   mongodb:
-    image: mongodb
-    container_name: mongodb
+    image: mongo
+    container_name: mongo
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=qpzm2745
