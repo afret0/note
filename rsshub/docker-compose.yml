@@ -5,7 +5,7 @@ services:
         image: diygod/rsshub
         restart: always
         ports:
-            - '1200:1200'
+            - '10118:1200'
         environment:
             NODE_ENV: production
             CACHE_TYPE: redis
