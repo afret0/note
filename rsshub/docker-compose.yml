@@ -10,7 +10,7 @@ services:
         environment:
             NODE_ENV: production
             CACHE_TYPE: redis
-            REDIS_URL: 'redis://default:qpzm2745@redis:10117/'
+            REDIS_URL: 'redis://default:qpzm2745@redis:127.0.0.1:10117/'
             # PUPPETEER_WS_ENDPOINT: 'ws://browserless:10119'
         # depends_on:
             # - redis
