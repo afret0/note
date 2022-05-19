@@ -11,21 +11,21 @@ services:
             NODE_ENV: production
             CACHE_TYPE: redis
             REDIS_URL: 'redis://default:qpzm2745@redis:10117/'
-            PUPPETEER_WS_ENDPOINT: 'ws://browserless:10119'
-        depends_on:
+            # PUPPETEER_WS_ENDPOINT: 'ws://browserless:10119'
+        # depends_on:
             # - redis
-            - browserless
+            # - browserless
 
-    browserless:
-        image: browserless/chrome
-        container_name: rsshub_browserless
-        restart: always
-        ports:
-            - 10119:3000
-        ulimits:
-          core:
-            hard: 0
-            soft: 0
+    # browserless:
+    #     image: browserless/chrome
+    #     container_name: rsshub_browserless
+    #     restart: always
+    #     ports:
+    #         - 10119:3000
+    #     ulimits:
+    #       core:
+    #         hard: 0
+    #         soft: 0
 
     # redis:
     #     image: redis:alpine
