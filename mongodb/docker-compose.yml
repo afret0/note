@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  mongodb:
+    image: mongodb
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=qpzm2745
+    ports:
+      - "27017:27017"
+    volumes:
+      - '/data/mongodb/:/data/db'
+    restart:
+      - unless-stopped
