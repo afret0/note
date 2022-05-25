@@ -1,0 +1,15 @@
+version: "3"
+services:
+  beets:
+    image: lscr.io/linuxserver/beets:latest
+    container_name: beets
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /etc/beets/config>:/config
+      - /data/beets/music:/music
+      - /data/beets/downloads:/downloads
+    ports:
+      - 10020:8337
+    restart: unless-stopped
