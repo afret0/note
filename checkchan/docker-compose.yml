@@ -1,6 +1,7 @@
 version: '3'
 services:
   chrome:
+    container_name: checkchan
     image: easychen/checkchan:latest
     volumes:
       - /data/checkchan:/checkchan/data
