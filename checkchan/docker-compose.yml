@@ -1,6 +1,6 @@
 version: '3'
 services:
-  chrome:
+  checkchan:
     container_name: checkchan
     image: easychen/checkchan:latest
     volumes:
