@@ -2,7 +2,7 @@ version: '3'
 
 # docker run -d -p 5566:5566  -v ~/melody-profile:/app/backend/.profile foamzou/melody:latest
 services:
-    rsshub:
+    melody:
         image: foamzou/melody
         container_name: melody
         restart: always
