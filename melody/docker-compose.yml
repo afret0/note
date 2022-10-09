@@ -2,11 +2,11 @@ version: '3'
 
 # docker run -d -p 5566:5566  -v ~/melody-profile:/app/backend/.profile foamzou/melody:latest
 services:
-    melody:
-        image: foamzou/melody
-        container_name: melody
-        restart: always
-        ports:
-            - '10122:5566'
-        volumes: 
-            - /etc/melody:/app/backend
+  melody:
+    image: foamzou/melody
+    container_name: melody
+    restart: always
+    ports:
+        - '10122:5566'
+    volumes: 
+        - /etc/melody:/app/backend
