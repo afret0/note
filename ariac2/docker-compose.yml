@@ -49,3 +49,9 @@ services:
       driver: json-file
       options:
         max-size: 1m
+
+# rpc 设置
+# rpc 地址: https://aria2c.pi.afreto.top:443/jsonrpc
+# rpc 协议: Https
+# rpc 请求方法: POST
+# rpc 密钥: P3TERX
