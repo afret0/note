@@ -24,22 +24,22 @@ proxies:
     #   max-early-data: 2048
     #   early-data-header-name: Sec-WebSocket-Protocol
 
-  - name: "tx"
+  - name: "bwg"
     type: vmess
-    server: v2ray.tx.afreto.top
-    port: 443
+    server: bwg.afreto.top
+    port: 444
     uuid: 2af23a0b-b9c5-4b42-88bd-5a5e24dc0105
     alterId: 0
     cipher: auto
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: v2ray.tx.afreto.top
+    servername: bwg.afreto.top
     network: ws
     ws-opts:
       path: /fire
       headers:
-        Host: v2ray.tx.afreto.top
+        Host: bwg.afreto.top
 
 proxy-groups:
   - name: 🔰 节点选择
