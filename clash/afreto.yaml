@@ -62,6 +62,7 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - aliyun
+      - bwg
   - name: ⛔️ 广告拦截
     type: select
     proxies:
