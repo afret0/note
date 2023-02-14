@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    v2raya:
+        container_name: v2raya
+        image: mzz2017/v2raya
+        environment:
+            - V2RAYA_LOG_FILE=/tmp/v2raya.log
+
+        # 如果你使用 MacOSX 或其他不支持 host 模式的环境，在该情况下无法使用全局透明代理，或者你不希望使用全局透明代理
+        network_mode: host
+        # ports:
+        #     - 2017:2017
+        #     - 20170-20172:20170-20172
+
+        volumes: 
+            - /lib/modules:/lib/modules:ro
+            - /etc/resolv.conf:/etc/resolv.conf
+            - /etc/v2raya:/etc/v2raya
+        restart: unless-stopped
+    
