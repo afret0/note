@@ -11,7 +11,7 @@ services:
       - 10115:10115
     restart: unless-stopped
     volumes:
-      - /data/disk1/picoshare:/data
+      - /data/picoshare:/data
     logging:
       driver: json-file
       options:

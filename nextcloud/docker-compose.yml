@@ -7,7 +7,7 @@ services:
       - TZ=Asia/Shanghai
     volumes:
       - /etc/nextcloud:/config
-      - /data/disk1/nextcloud:/data
+      - /data/nextcloud:/data
     ports:
       - 10120:443
     restart: unless-stopped

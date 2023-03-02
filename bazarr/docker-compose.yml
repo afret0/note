@@ -8,8 +8,8 @@ services:
       - PGID=1000
     volumes:
       - /etc/bazarr:/config
-      - /data/disk1/bazarr/movies:/movies #optional
-      - /data/disk1/bazarr/tv:/tv #optional
+      - /data/bazarr/movies:/movies #optional
+      - /data/bazarr/tv:/tv #optional
     ports:
       - 10120:6767
     restart: unless-stopped

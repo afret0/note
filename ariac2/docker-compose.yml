@@ -19,7 +19,7 @@ services:
       - TZ=Asia/Shanghai
     volumes:
       - /etc/aria2:/config
-      - /data/disk1/aria2-downloads:/downloads
+      - /data/aria2-downloads:/downloads
 # If you use host network mode, then no port mapping is required.
 # This is the easiest way to use IPv6 networks.
     network_mode: host

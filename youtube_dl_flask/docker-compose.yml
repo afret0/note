@@ -7,5 +7,5 @@ services:
     ports:
       - 10117:80
     volumes:
-      - /data/disk1/emby/share1:/youtube-dl
+      - /data/emby/share1:/youtube-dl
     restart: always

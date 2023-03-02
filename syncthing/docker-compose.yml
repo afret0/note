@@ -8,8 +8,8 @@ services:
       - PGID=1000
     volumes:
       - /etc/syncthing:/config
-      - /data/disk1/syncthing:/data1
-      - /data/disk1/syncthing:/data2
+      - /data/syncthing:/data1
+      - /data/syncthing:/data2
     ports:
       - 10117:8384 # Web UI
       - 22000:22000

@@ -5,7 +5,7 @@ services:
     image: snowdreamtech/frpc
     volumes: 
       - /etc/frp/:/etc/frp
-      - /data/disk1/:/data
+      - /data/:/data
     restart: always
     network_mode: host
     logging:

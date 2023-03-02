@@ -10,7 +10,7 @@ services:
       - TZ=Europe/London
     volumes:
       - /etc/chevereto/:/config
-      - /data/disk1/chevereto/:/data
+      - /data/chevereto/:/data
     ports:
       - 80:80
       - 443:443
