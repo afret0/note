@@ -10,8 +10,8 @@ services:
       # - GIDLIST=100 # A comma-separated list of additional GIDs to run emby as (default: 2)
     volumes:
       - /etc/emby:/config # Configuration directory
-      - /data/disk1/emby/share1:/mnt/share1 # Media directory
-      - /data/disk1/emby/share2:/mnt/share2 # Media directory
+      - /data/emby/share1:/mnt/share1 # Media directory
+      - /data/emby/share2:/mnt/share2 # Media directory
     ports:
       - 10112:8096 # HTTP port
       # - 8920:8920 # HTTPS port
