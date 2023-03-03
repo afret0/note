@@ -1892,7 +1892,7 @@ rules:
  - DOMAIN-SUFFIX,baoyatu.cc,🛑 全球拦截
  - DOMAIN-SUFFIX,bar.baidu.com,🛑 全球拦截
  - DOMAIN-SUFFIX,base.filedot.xyz,🛑 全球拦截
- - DOMAIN-SUFFIX,bat.bing.com,🛑 全球拦截
+ - DOMAIN-SUFFIX,bat.bing.com,Ⓜ️ 微软服务
  - DOMAIN-SUFFIX,bax.xiawu.com,🛑 全球拦截
  - DOMAIN-SUFFIX,baxf.m.shuhuangge.org,🛑 全球拦截
  - DOMAIN-SUFFIX,bay.xiawu.com,🛑 全球拦截
@@ -2000,7 +2000,7 @@ rules:
  - DOMAIN-SUFFIX,bigboy.eurogamer.net,🛑 全球拦截
  - DOMAIN-SUFFIX,billionfocus.com,🛑 全球拦截
  - DOMAIN-SUFFIX,binaryage-leechgate.herokuapp.com,🛑 全球拦截
- - DOMAIN-SUFFIX,bingyinq.com,🛑 全球拦截
+ - DOMAIN-SUFFIX,bingyinq.com,Ⓜ️ 微软服务
  - DOMAIN-SUFFIX,biq.keefung-zs.com,🛑 全球拦截
  - DOMAIN-SUFFIX,bite.theta.sogoucdn.com,🛑 全球拦截
  - DOMAIN-SUFFIX,bitsumactivationserver.com,🛑 全球拦截
@@ -2111,7 +2111,7 @@ rules:
  - DOMAIN-SUFFIX,c.baidu.com,🛑 全球拦截
  - DOMAIN-SUFFIX,c.betrad.com,🛑 全球拦截
  - DOMAIN-SUFFIX,c.bigmir.net,🛑 全球拦截
- - DOMAIN-SUFFIX,c.bing.com,🛑 全球拦截
+ - DOMAIN-SUFFIX,c.bing.com,Ⓜ️ 微软服务
  - DOMAIN-SUFFIX,c.bxb.oupeng.com,🛑 全球拦截
  - DOMAIN-SUFFIX,c.codeonclick.com,🛑 全球拦截
  - DOMAIN-SUFFIX,c.cyhx98.com,🛑 全球拦截
@@ -4321,7 +4321,7 @@ rules:
  - DOMAIN-SUFFIX,istreamsche.com,🛑 全球拦截
  - DOMAIN-SUFFIX,itaoxiaoshuo.com,🛑 全球拦截
  - DOMAIN-SUFFIX,item.ttkvod.com,🛑 全球拦截
- - DOMAIN-SUFFIX,items.bingdiantao.com,🛑 全球拦截
+ - DOMAIN-SUFFIX,items.bingdiantao.com,Ⓜ️ 微软服务
  - DOMAIN-SUFFIX,its.fugetech.com,🛑 全球拦截
  - DOMAIN-SUFFIX,its-dori.tumblr.com,🛑 全球拦截
  - DOMAIN-SUFFIX,iutr.uozwys.top,🛑 全球拦截
@@ -4357,7 +4357,7 @@ rules:
  - DOMAIN-SUFFIX,j.yljiaoluo.com,🛑 全球拦截
  - DOMAIN-SUFFIX,j.ytbt.cc,🛑 全球拦截
  - DOMAIN-SUFFIX,j.zhdap.com,🛑 全球拦截
- - DOMAIN-SUFFIX,j1.piaobing.com,🛑 全球拦截
+ - DOMAIN-SUFFIX,j1.piaobing.com,Ⓜ️ 微软服务
  - DOMAIN-SUFFIX,j17.shangc.net,🛑 全球拦截
  - DOMAIN-SUFFIX,j17.xiumu.cn,🛑 全球拦截
  - DOMAIN-SUFFIX,j520s.gzcl999.cn,🛑 全球拦截
@@ -8633,7 +8633,7 @@ rules:
  - DOMAIN-SUFFIX,bartender.cc,🛑 全球拦截
  - DOMAIN-SUFFIX,betterzip.net,🛑 全球拦截
  - DOMAIN-SUFFIX,beyondcompare.cc,🛑 全球拦截
- - DOMAIN-SUFFIX,bingdianhuanyuan.cn,🛑 全球拦截
+ - DOMAIN-SUFFIX,bingdianhuanyuan.cn,Ⓜ️ 微软服务
  - DOMAIN-SUFFIX,chemdraw.com.cn,🛑 全球拦截
  - DOMAIN-SUFFIX,cjmakeding.com,🛑 全球拦截
  - DOMAIN-SUFFIX,cjmkt.com,🛑 全球拦截
@@ -9060,7 +9060,7 @@ rules:
  - DOMAIN-SUFFIX,betterzip.net,🛑 全球拦截
  - DOMAIN-SUFFIX,betterzipcn.com,🛑 全球拦截
  - DOMAIN-SUFFIX,beyondcompare.cc,🛑 全球拦截
- - DOMAIN-SUFFIX,bingdianhuanyuan.cn,🛑 全球拦截
+ - DOMAIN-SUFFIX,bingdianhuanyuan.cn,Ⓜ️ 微软服务
  - DOMAIN-SUFFIX,chemdraw.com.cn,🛑 全球拦截
  - DOMAIN-SUFFIX,cjmakeding.com,🛑 全球拦截
  - DOMAIN-SUFFIX,cjmkt.com,🛑 全球拦截
