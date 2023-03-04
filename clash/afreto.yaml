@@ -136,7 +136,6 @@ rules:
  - DOMAIN-KEYWORD,1drv,Ⓜ️ 微软服务
  - DOMAIN-KEYWORD,microsoft,Ⓜ️ 微软服务
  - DOMAIN-SUFFIX,openai.com,🔰 节点选择
- - DOMAIN-SUFFIX,bing.com,Ⓜ️ 微软服务
  - DOMAIN-SUFFIX,aadrm.com,Ⓜ️ 微软服务
  - DOMAIN-SUFFIX,acompli.com,Ⓜ️ 微软服务
  - DOMAIN-SUFFIX,acompli.net,Ⓜ️ 微软服务
