@@ -6,6 +6,6 @@ RUN npm install -g yapi-cli --registry https://registry.npm.taobao.org
 COPY ./config.json .
 EXPOSE 80
 EXPOSE 443
-CMD [ "yapi server" ]
+CMD ["/bin/yapi server"]
 
 # docker build . --build-arg "HTTP_PROXY=http://127.0.0.1:1087/" --build-arg "HTTPS_PROXY=http://127.0.0.1:1087/"  --network host -t debian:1
