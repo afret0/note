@@ -10,4 +10,6 @@ RUN ["apt-get","update"]
 # RUN ["pipe","install","pipenv"]
 
 
-#docker build . --build-arg "HTTP_PROXY=http://127.0.0.1:1087/" --build-arg "HTTPS_PROXY=http://127.0.0.1:1087/"  --network host -t yapi:1
+#docker build . --build-arg "HTTP_PROXY=http://127.0.0.1:1087/" --build-arg "HTTPS_PROXY=http://127.0.0.1:1087/"  --network host -t debian:1
+# docker tag debian:1 afreto/debian:1
+# docker push afreto/debian:1
