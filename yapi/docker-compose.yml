@@ -1,10 +1,14 @@
 version: "3"
 
 services:
-  caddy:  
-    container_name: caddy
+  yapi:  
+    container_name: yapi
+    image: afreto/yapi:1.1
     volumes:
       - /etc/caddy:/etc/caddy
       - /data/caddy:/data
+    ports: 
+      - 80:80
+      - 443:443
     restart:
       - unless-stopped
