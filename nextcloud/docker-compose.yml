@@ -1,0 +1,13 @@
+version: "3"
+services:
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /etc/nextcloud:/config
+      - /data/disk1/nextcloud:/data
+    ports:
+      - 10120:443
+    restart: unless-stopped

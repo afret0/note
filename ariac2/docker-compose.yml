@@ -18,7 +18,7 @@ services:
       - CUSTOM_TRACKER_URL=
       - TZ=Asia/Shanghai
     volumes:
-      - /etc/aria2-config:/config
+      - /etc/aria2:/config
       - /data/disk1/aria2-downloads:/downloads
 # If you use host network mode, then no port mapping is required.
 # This is the easiest way to use IPv6 networks.
@@ -49,3 +49,9 @@ services:
       driver: json-file
       options:
         max-size: 1m
+
+# rpc 设置
+# rpc 地址: https://aria2c.pi.afreto.top:443/jsonrpc
+# rpc 协议: Https
+# rpc 请求方法: POST
+# rpc 密钥: P3TERX
