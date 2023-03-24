@@ -42,11 +42,7 @@ proxies:
         Host: bwg.afreto.top
 
 proxy-groups:
-  - name: chatgpt
-    type: select
-    proxies:
-      - bwg
-      - aliyun
+
   - name: 🔰 节点选择
     type: select
     proxies:
@@ -59,6 +55,11 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
+      - aliyun
+  - name: chatgpt
+    type: select
+    proxies:
+      - bwg
       - aliyun
   - name: 🎥 NETFLIX
     type: select
