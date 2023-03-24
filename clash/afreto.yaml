@@ -42,6 +42,11 @@ proxies:
         Host: bwg.afreto.top
 
 proxy-groups:
+  - name: chatgpt
+    type: select
+    proxies:
+      - bwg
+      - aliyun
   - name: 🔰 节点选择
     type: select
     proxies:
@@ -305,6 +310,7 @@ rules:
  - DOMAIN-SUFFIX,hudong.pl.youku.com,🛑 全球拦截
  - DOMAIN-SUFFIX,huodong.pl.youku.com,🛑 全球拦截
  - DOMAIN-SUFFIX,huodong.vip.youku.com,🛑 全球拦截
+ - DOMAIN-SUFFIX,chat.openai.com,chatgpt
  - DOMAIN-SUFFIX,hz.youku.com,🛑 全球拦截
  - DOMAIN-SUFFIX,l.ykimg.com,🛑 全球拦截
  - DOMAIN-SUFFIX,lstat.youku.com,🛑 全球拦截
