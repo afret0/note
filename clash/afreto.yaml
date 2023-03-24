@@ -93,6 +93,7 @@ proxy-groups:
       - 🎯 全球直连
       - 🔰 节点选择
       - aliyun
+      - bwg
   - name: 📲 电报信息
     type: select
     proxies:
