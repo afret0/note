@@ -313,6 +313,7 @@ rules:
  - DOMAIN-SUFFIX,huodong.vip.youku.com,🛑 全球拦截
  - DOMAIN-SUFFIX,chat.openai.com,chatgpt
  - DOMAIN-SUFFIX,openai.com,chatgpt
+ - DOMAIN-SUFFIX,platform.openai.com,chatgpt
  - DOMAIN-SUFFIX,hz.youku.com,🛑 全球拦截
  - DOMAIN-SUFFIX,l.ykimg.com,🛑 全球拦截
  - DOMAIN-SUFFIX,lstat.youku.com,🛑 全球拦截
