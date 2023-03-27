@@ -8,7 +8,7 @@ proxies:
   - name: "aliyun"
     type: vmess
     server: aliyun.afreto.top
-    port: 444
+    port: 445
     uuid: 888d163a-80d7-4495-b3d1-fcf61fc6b6ce
     alterId: 0
     cipher: auto
