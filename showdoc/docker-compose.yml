@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  showdoc:  
+    image: star7th/showdoc 
+    container_name: showdoc
+    volumes:
+      - /data/showdoc/showdoc_data/:/var/www/
+    ports:
+      - 4999:80
+    restart: unless-stopped
