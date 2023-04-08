@@ -7,4 +7,5 @@ services:
     volumes:
       - /etc/caddy:/etc/caddy
       - /data/caddy:/data
+    network_mode: host
     restart: unless-stopped
