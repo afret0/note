@@ -9966,28 +9966,28 @@ rules:
  - DOMAIN-SUFFIX,s3.amazonaws.com,节点选择
  - DOMAIN-SUFFIX,zaobao.com.sg,节点选择
  - DOMAIN,international-gfe.download.nvidia.com,节点选择
- - DOMAIN-SUFFIX,aaplimg.com,🍎 苹果服务
- - DOMAIN-SUFFIX,apple.co,🍎 苹果服务
- - DOMAIN-SUFFIX,apple.com,🍎 苹果服务
- - DOMAIN-SUFFIX,apple.com.cn,🍎 苹果服务
- - DOMAIN-SUFFIX,apple-cloudkit.com,🍎 苹果服务
- - DOMAIN-SUFFIX,appstore.com,🍎 苹果服务
- - DOMAIN-SUFFIX,cdn-apple.com,🍎 苹果服务
- - DOMAIN-SUFFIX,icloud.com,🍎 苹果服务
- - DOMAIN-SUFFIX,icloud.com.cn,🍎 苹果服务
- - DOMAIN-SUFFIX,icloud-content.com,🍎 苹果服务
- - DOMAIN-SUFFIX,me.com,🍎 苹果服务
- - DOMAIN-SUFFIX,mzstatic.com,🍎 苹果服务
- - DOMAIN-KEYWORD,apple.com.akadns.net,🍎 苹果服务
- - DOMAIN-KEYWORD,icloud.com.akadns.net,🍎 苹果服务
- - IP-CIDR,17.0.0.0/8,🍎 苹果服务,no-resolve
- - IP-CIDR,63.92.224.0/19,🍎 苹果服务,no-resolve
- - IP-CIDR,65.199.22.0/23,🍎 苹果服务,no-resolve
- - IP-CIDR,139.178.128.0/18,🍎 苹果服务,no-resolve
- - IP-CIDR,144.178.0.0/19,🍎 苹果服务,no-resolve
- - IP-CIDR,192.35.50.0/24,🍎 苹果服务,no-resolve
- - IP-CIDR,198.183.17.0/24,🍎 苹果服务,no-resolve
- - IP-CIDR,205.180.175.0/24,🍎 苹果服务,no-resolve
+ - DOMAIN-SUFFIX,aaplimg.com,苹果服务
+ - DOMAIN-SUFFIX,apple.co,苹果服务
+ - DOMAIN-SUFFIX,apple.com,苹果服务
+ - DOMAIN-SUFFIX,apple.com.cn,苹果服务
+ - DOMAIN-SUFFIX,apple-cloudkit.com,苹果服务
+ - DOMAIN-SUFFIX,appstore.com,苹果服务
+ - DOMAIN-SUFFIX,cdn-apple.com,苹果服务
+ - DOMAIN-SUFFIX,icloud.com,苹果服务
+ - DOMAIN-SUFFIX,icloud.com.cn,苹果服务
+ - DOMAIN-SUFFIX,icloud-content.com,苹果服务
+ - DOMAIN-SUFFIX,me.com,苹果服务
+ - DOMAIN-SUFFIX,mzstatic.com,苹果服务
+ - DOMAIN-KEYWORD,apple.com.akadns.net,苹果服务
+ - DOMAIN-KEYWORD,icloud.com.akadns.net,苹果服务
+ - IP-CIDR,17.0.0.0/8,苹果服务,no-resolve
+ - IP-CIDR,63.92.224.0/19,苹果服务,no-resolve
+ - IP-CIDR,65.199.22.0/23,苹果服务,no-resolve
+ - IP-CIDR,139.178.128.0/18,苹果服务,no-resolve
+ - IP-CIDR,144.178.0.0/19,苹果服务,no-resolve
+ - IP-CIDR,192.35.50.0/24,苹果服务,no-resolve
+ - IP-CIDR,198.183.17.0/24,苹果服务,no-resolve
+ - IP-CIDR,205.180.175.0/24,苹果服务,no-resolve
  - DOMAIN-SUFFIX,qhres.com,全球直连
  - DOMAIN-SUFFIX,qhimg.com,全球直连
  - DOMAIN-SUFFIX,alibaba.com,全球直连
