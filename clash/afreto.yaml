@@ -102,7 +102,6 @@ proxy-groups:
     proxies:
       -  节点选择
       -  全球直连
-      -  自动选择
       - aliyun
   - name:  全球直连
     type: select
@@ -118,7 +117,6 @@ proxy-groups:
     proxies:
       -  节点选择
       -  全球直连
-      -  自动选择
       - aliyun
 rules:
  - DOMAIN-SUFFIX,local,全球直连
