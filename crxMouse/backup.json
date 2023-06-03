@@ -1,0 +1,246 @@
+{
+    "normal": {
+        "autocancel": false,
+        "autocancelvalue": 2,
+        "cancelcontextmenu": true,
+        "capturetype": "jpeg",
+        "clickedOptin": false,
+        "cursorimg": null,
+        "cursorimgscale": 1,
+        "dbclicktime": 600,
+        "drag": true,
+        "gesture": true,
+        "hidetrash": false,
+        "jpegquality": 100,
+        "lasttab": false,
+        "minilength": 10,
+        "newtabposition": "chrome",
+        "scroll": false,
+        "scrolleffects": true,
+        "scrollgesture": false,
+        "strokegesture": false
+    },
+    "gesture": {
+        "direct": true,
+        "directcolor": "#778899",
+        "directopa": 0.9,
+        "gesPos": "cc",
+        "geskey": "right",
+        "gesture": [
+            {
+                "direct": "RU",
+                "action": "G_newtab",
+                "whitelist": [],
+                "moreTarget": "newfront",
+                "morePosition": "chrome",
+                "morePinned": "unpinned",
+                "moreDes": ""
+            },
+            {
+                "direct": "DR",
+                "action": "G_close",
+                "whitelist": [],
+                "moreClosesel": "chrome",
+                "moreCloseopts": "close"
+            },
+            {
+                "direct": "U",
+                "action": "G_up"
+            },
+            {
+                "direct": "D",
+                "action": "G_down"
+            },
+            {
+                "direct": "DU",
+                "action": "G_top"
+            },
+            {
+                "direct": "UD",
+                "action": "G_bottom"
+            },
+            {
+                "direct": "R",
+                "action": "G_righttab"
+            },
+            {
+                "direct": "L",
+                "action": "G_lefttab"
+            },
+            {
+                "direct": "RD",
+                "action": "G_reloadclear"
+            },
+            {
+                "direct": "UL",
+                "action": "G_back"
+            },
+            {
+                "direct": "UR",
+                "action": "G_go"
+            },
+            {
+                "direct": "DL",
+                "action": "G_reclosedtab",
+                "whitelist": [],
+                "moreTarget": "newfront",
+                "morePosition": "chrome",
+                "morePinned": "unpinned",
+                "moreDes": ""
+            }
+        ],
+        "gestureui": true,
+        "gholdkey": "none",
+        "gholdkeydisable": "alt",
+        "gholdkeytype": "true",
+        "stenable": false,
+        "stroke": true,
+        "strokecolor": "#4E1485",
+        "strokeopa": 0.8,
+        "strokewidth": 5,
+        "tooltip": true,
+        "tooltipcolor": "#120310",
+        "tooltipopa": 0.9,
+        "tooltipwidth": 18
+    },
+    "drag": {
+        "ddirect": true,
+        "ddirectcolor": "#778899",
+        "ddirectopa": 0.9,
+        "dholdkey": "none",
+        "dragimage": true,
+        "draginput": false,
+        "draglink": true,
+        "dragtext": true,
+        "dragui": true,
+        "dstroke": true,
+        "dstrokecolor": "#4E1485",
+        "dstrokeopa": 0.8,
+        "dstrokewidth": 5,
+        "dtooltip": true,
+        "dtooltipcolor": "#120310",
+        "dtooltipopa": 0.9,
+        "dtooltipwidth": 18,
+        "image": [
+            {
+                "direct": "L",
+                "action": "I_copyurl"
+            },
+            {
+                "action": "I_open",
+                "direct": "R",
+                "moreDes": "I_open newfront",
+                "morePinned": "unpinned",
+                "morePosition": "right",
+                "moreTarget": "newfront"
+            },
+            {
+                "direct": "D",
+                "action": "I_save"
+            }
+        ],
+        "imgfirst": "none",
+        "imgfirstcheck": false,
+        "link": [
+            {
+                "direct": "L",
+                "action": "L_copytext"
+            },
+            {
+                "direct": "R",
+                "action": "L_copyurl"
+            },
+            {
+                "action": "L_open",
+                "direct": "D",
+                "moreTarget": "newfront",
+                "morePosition": "chrome",
+                "morePinned": "unpinned",
+                "moreDes": ""
+            },
+            {
+                "action": "L_open",
+                "direct": "U",
+                "moreTarget": "newfront",
+                "morePosition": "chrome",
+                "morePinned": "unpinned",
+                "moreDes": ""
+            }
+        ],
+        "setdragurl": true,
+        "text": [
+            {
+                "direct": "L",
+                "action": "G_none"
+            },
+            {
+                "direct": "R",
+                "action": "G_none"
+            },
+            {
+                "direct": "D",
+                "action": "G_none"
+            }
+        ]
+    },
+    "scroll": {
+        "scrollaccele": 1,
+        "scrollspeed": 3,
+        "smooth": true
+    },
+    "scrollgesture": {
+        "fastSwitch": false,
+        "reverseFS": false,
+        "sgsleft": [
+            {
+                "action": "G_top"
+            },
+            {
+                "action": "G_bottom"
+            }
+        ],
+        "sgsleftenable": true,
+        "sgsright": [
+            {
+                "action": "G_top"
+            },
+            {
+                "action": "G_bottom"
+            }
+        ],
+        "sgsrightenable": false,
+        "tablist": true,
+        "tablistVisual": true,
+        "tablistkey": "right"
+    },
+    "strokegesture": {
+        "strleft": [
+            {
+                "action": "G_none"
+            },
+            {
+                "action": "G_righttab"
+            }
+        ],
+        "strleftenable": true,
+        "strmiddle": [
+            {
+                "action": "G_lefttab"
+            },
+            {
+                "action": "G_righttab"
+            }
+        ],
+        "strmiddleenable": false,
+        "strpress": "up",
+        "strright": [
+            {
+                "action": "G_lefttab"
+            },
+            {
+                "action": "G_none"
+            }
+        ],
+        "strrightenable": true
+    }
+}
