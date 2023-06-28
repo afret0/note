@@ -54,6 +54,7 @@ proxy-groups:
     proxies:
       - bwg
       - aliyun
+
   - name: NETFLIX
     type: select
     proxies:
@@ -129,8 +130,6 @@ rules:
  - IP-CIDR6,fc00::/7,全球直连,no-resolve
  - IP-CIDR6,fe80::/10,全球直连,no-resolve
  - IP-CIDR6,fd00::/8,全球直连,no-resolve
- - DOMAIN-SUFFFIX,intellij.net,chatgpt
- - DOMAIN-SUFFFIX,jetbrains.com,chatgpt
  - DOMAIN-KEYWORD,1drv,微软服务
  - DOMAIN-KEYWORD,microsoft,微软服务
  - DOMAIN-SUFFIX,aadrm.com,微软服务
@@ -305,6 +304,8 @@ rules:
  - DOMAIN-SUFFIX,openai.com,chatgpt
  - DOMAIN-SUFFIX,platform.openai.com,chatgpt
  - DOMAIN-SUFFIX,ai.com,chatgpt
+ - DOMAIN-SUFFIX,intellij.net,chatgpt
+ - DOMAIN-SUFFIX,jetbrains.com,chatgpt
  - DOMAIN-SUFFIX,hz.youku.com,全球拦截
  - DOMAIN-SUFFIX,l.ykimg.com,全球拦截
  - DOMAIN-SUFFIX,lstat.youku.com,全球拦截
