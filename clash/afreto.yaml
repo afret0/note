@@ -54,6 +54,10 @@ proxy-groups:
     proxies:
       - bwg
       - aliyun
+  - name: bwg
+    type: select
+    proxies:
+      - bwg
   - name: NETFLIX
     type: select
     proxies:
