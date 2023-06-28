@@ -16,10 +16,11 @@ services:
       - PEERDNS=auto #optional
       - INTERNAL_SUBNET=0.0.0.0/0 #optional
       - ALLOWEDIPS=0.0.0.0/0 #optional
+      # - ALLOWEDIPS=172.16.0.0/16 #optional
       - PERSISTENTKEEPALIVE_PEERS=all #optional
       - LOG_CONFS=true #optional
     volumes:
-      - /wireguard/config:/config
+      - /etc/wireguard/:/config
       - /data/wireguard/lib/modules:/lib/modules #optional
     ports:
       - 51820:51820/udp
