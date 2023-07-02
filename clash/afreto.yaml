@@ -120,7 +120,7 @@ proxy-groups:
       -  全球直连
       - aliyun
 rules:
- - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/base_filter.txt,节点选择
+#  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/base_filter.txt,节点选择
 #  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/chines_filter.txt,节点选择
 #  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/search_filter.txt,节点选择
  - DOMAIN-SUFFIX,local,全球直连
