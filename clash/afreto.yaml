@@ -10155,7 +10155,6 @@ rules:
  - DOMAIN-SUFFIX,yuanchengxiezuo.com,全球拦截
  - DOMAIN-SUFFIX,zbrushcn.com,全球拦截
  - DOMAIN-SUFFIX,zhzzx.com,全球拦截
- - DOMAIN-SUFFIX,tracking.miui.com,全球拦截
  - DOMAIN-SUFFIX,biligame.net,全球拦截
  - DOMAIN-SUFFIX,netflix.com,NETFLIX
  - DOMAIN-SUFFIX,netflix.net,NETFLIX
@@ -10426,7 +10425,6 @@ rules:
  - DOMAIN-SUFFIX,biliapi.net,国内媒体
  - DOMAIN-SUFFIX,bilibili.com,国内媒体
  - DOMAIN-SUFFIX,biligame.com,国内媒体
- - DOMAIN-SUFFIX,biligame.net,国内媒体
  - DOMAIN-SUFFIX,bilivideo.com,国内媒体
  - DOMAIN-SUFFIX,hdslb.com,国内媒体
  - DOMAIN-SUFFIX,im9.com,国内媒体
