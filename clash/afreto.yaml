@@ -121,8 +121,8 @@ proxy-groups:
       - aliyun
 rules:
  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/base_filter.txt,节点选择
- - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/chines_filter.txt,节点选择
- - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/search_filter.txt,节点选择
+#  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/chines_filter.txt,节点选择
+#  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/search_filter.txt,节点选择
  - DOMAIN-SUFFIX,local,全球直连
  - IP-CIDR,192.168.0.0/16,全球直连,no-resolve
  - IP-CIDR,10.0.0.0/8,全球直连,no-resolve
