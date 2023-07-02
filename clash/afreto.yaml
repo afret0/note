@@ -48,7 +48,7 @@ proxy-groups:
     proxies:
       - aliyun
       - bwg
-      - 全球直连
+      # - 全球直连
   - name: chatgpt
     type: select
     proxies:
@@ -119,7 +119,7 @@ rules:
 #  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/chines_filter.txt,节点选择
 #  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/search_filter.txt,节点选择
  - DOMAIN-SUFFIX,local,全球直连
-  - DOMAIN-SUFFIX,a.youdao.com,全球拦截
+ - DOMAIN-SUFFIX,a.youdao.com,全球拦截
  - DOMAIN-SUFFIX,adgeo.corp.163.com,全球拦截
  - DOMAIN-SUFFIX,analytics.126.net,全球拦截
  - DOMAIN-SUFFIX,bobo.corp.163.com,全球拦截
