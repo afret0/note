@@ -62,12 +62,12 @@ proxy-groups:
       - 全球直连
       - aliyun
       - bwg
-  - name:  广告拦截
-    type: select
-    proxies:
-      -  全球拦截
-      -  全球直连
-      -  节点选择
+  # - name:  广告拦截
+  #   type: select
+  #   proxies:
+  #     -  全球拦截
+  #     -  全球直连
+  #     -  节点选择
   - name:  运营劫持
     type: select
     proxies:
@@ -9116,6 +9116,8 @@ rules:
  - DOMAIN-SUFFIX,yuanchengxiezuo.com,全球拦截
  - DOMAIN-SUFFIX,zbrushcn.com,全球拦截
  - DOMAIN-SUFFIX,zhzzx.com,全球拦截
+ - DOMAIN-SUFFIX,tracking.miui.com,全球拦截
+ - DOMAIN-SUFFIX,biligame.net,全球拦截
  - DOMAIN-SUFFIX,netflix.com,NETFLIX
  - DOMAIN-SUFFIX,netflix.net,NETFLIX
  - DOMAIN-SUFFIX,nflxext.com,NETFLIX
