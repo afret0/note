@@ -120,10 +120,11 @@ rules:
 #  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/search_filter.txt,节点选择
  - DOMAIN-SUFFIX,local,全球直连
  - DOMAIN-SUFFIX,a.youdao.com,全球拦截
+ - DOMAIN-SUFFIX,metok.sys.miui.com,全球拦截
  - DOMAIN-SUFFIX,bugly.qq.com,全球拦截
  - DOMAIN-SUFFIX,ad.xiaomi.com,全球拦截
  - DOMAIN-SUFFIX,trace.qq.com,全球拦截
- - DOMAIN-SUFFIX,app.adjust.world,全球拦截
+ - DOMAIN-SUFFIX,adjust.world,全球拦截
  - DOMAIN-SUFFIX,doubleclick.net,全球拦截
  - DOMAIN-SUFFIX,app-measurement.com,全球拦截
  - DOMAIN-SUFFIX,api.sec.miui.com,全球拦截
@@ -1249,7 +1250,6 @@ rules:
  - DOMAIN-SUFFIX,wunderlist.com,微软服务
  - DOMAIN-SUFFIX,yammer.com,微软服务
  - DOMAIN-SUFFIX,yammerusercontent.com,微软服务
- - DOMAIN,app.adjust.com,全球直连
  - DOMAIN,bdtj.tagtic.cn,全球直连
  - DOMAIN,log.mmstat.com,全球直连
  - DOMAIN,sycm.mmstat.com,全球直连
@@ -9259,6 +9259,7 @@ rules:
  - DOMAIN-SUFFIX,adinfuse.com,全球拦截
  - DOMAIN-SUFFIX,adjust.com,全球拦截
  - DOMAIN-SUFFIX,adjust.io,全球拦截
+ - DOMAIN-SUFFIX,adjust.net.in,全球拦截
  - DOMAIN-SUFFIX,admaster.com.cn,全球拦截
  - DOMAIN-SUFFIX,admob.com,全球拦截
  - DOMAIN-SUFFIX,adnyg.com,全球拦截
