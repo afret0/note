@@ -10,7 +10,7 @@ services:
         ports: 
             - 9200:9200
             - 9300:9300
-        volumes: 
+        # volumes: 
             # - /etc/redis:/etc/redis/
             # - /data/redis/data:/data
         restart: unless-stopped
