@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    elasticsearch:
+        container_name: ES
+        image: elasticsearch:8.8.1
+        environment:
+            - ALLOW_EMPTY_PASSWORD=yes
+            - discovery.type=single-node
+        ports: 
+            - 9200:9200
+            - 9300:9300
+        volumes: 
+            # - /etc/redis:/etc/redis/
+            # - /data/redis/data:/data
+        restart: unless-stopped
+    
