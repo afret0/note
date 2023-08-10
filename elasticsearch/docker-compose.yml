@@ -2,16 +2,18 @@ version: '3'
 
 services:
     elasticsearch:
-        container_name: ES
-        image: elasticsearch:8.8.1
+        container_name: es01
+        image: docker.elastic.co/elasticsearch/elasticsearch:8.9.0
         environment:
             - ALLOW_EMPTY_PASSWORD=yes
             - discovery.type=single-node
         ports: 
             - 9200:9200
             - 9300:9300
-        # volumes: 
-            # - /etc/redis:/etc/redis/
-            # - /data/redis/data:/data
+        volumes:
+            - /etc/elasticsearch:/usr/share/elasticsearch/config
         restart: unless-stopped
     
+# docker exec -it es01 /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
+# docker cp es01:/usr/share/elasticsearch/config/certs/http_ca.crt .
+# curl --cacert http_ca.crt -u elastic https://localhost:9200
