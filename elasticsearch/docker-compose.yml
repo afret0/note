@@ -1,19 +1,39 @@
 version: '3'
 
 services:
-    elasticsearch:
-        container_name: es01
-        image: docker.elastic.co/elasticsearch/elasticsearch:8.9.0
-        environment:
-            - ALLOW_EMPTY_PASSWORD=yes
-            - discovery.type=single-node
-        ports: 
-            - 9200:9200
-            - 9300:9300
-        volumes:
-            - /etc/elasticsearch:/usr/share/elasticsearch/config
-        restart: unless-stopped
-    
+  elasticsearch:
+    container_name: es01
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.9.0
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+      - 9300:9300
+    # volumes:
+    #     - /etc/elasticsearch:/usr/share/elasticsearch/config
+    restart: unless-stopped
+
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:8.9.0
+    ports:
+      - 5601:5601
+    restart: unless-stopped
+
 # docker exec -it es01 /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
+
+# elastic:T0uyuUlMSzl6GqFy5sW=
+# kibana:ihD+aYfgrtZigz-V6i2X
+
 # docker cp es01:/usr/share/elasticsearch/config/certs/http_ca.crt .
 # curl --cacert http_ca.crt -u elastic https://localhost:9200
+
+
+# curl -X POST --cacert http_ca.crt -u elastic "https://localhost:9200/customer/_doc/1?pretty" -H 'Content-Type: application/json' -d'
+# {
+#   "firstname": "Jennifer",
+#   "lastname": "Walters"
+# }
+# '
+
