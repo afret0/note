@@ -1,21 +1,23 @@
 version: "3"
 services:
   emby:
-    image: emby/embyserver_arm64v8
-    container_name: embyserver
-    # network_mode: brige # Enable DLNA and Wake-on-Lan
+    image: lscr.io/linuxserver/emby:latest
+    container_name: emby
     environment:
-      - UID=0 # The UID to run emby as (default: 2)
-      - GID=0 # The GID to run emby as (default 2)
-      # - GIDLIST=100 # A comma-separated list of additional GIDs to run emby as (default: 2)
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
     volumes:
-      - /etc/emby:/config # Configuration directory
-      - /data/emby:/mnt/share1 # Media directory
-      # - /data/emby/share2:/mnt/share2 # Media directory
+      - /etc/emby:/config
+      - /data/emby/:/data
+      # - /opt/vc/lib:/opt/vc/lib #optional
     ports:
-      - 10112:8096 # HTTP port
-      # - 8920:8920 # HTTPS port
+      - 8096:8096
+      - 8920:8920 #optional
     # devices:
-      # - /dev/dri:/dev/dri # VAAPI/NVDEC/NVENC render nodes
-      # - /dev/vchiq:/dev/vchiq # MMAL/OMX on Raspberry Pi
+    #   - /dev/dri:/dev/dri #optional
+    #   - /dev/vchiq:/dev/vchiq #optional
+    #   - /dev/video10:/dev/video10 #optional
+    #   - /dev/video11:/dev/video11 #optional
+    #   - /dev/video12:/dev/video12 #optional
     restart: unless-stopped
