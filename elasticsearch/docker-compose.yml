@@ -7,11 +7,12 @@ services:
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
       - discovery.type=single-node
+      - cluster.name=es-test
     ports:
       - 9200:9200
       - 9300:9300
     # volumes:
-    #     - /etc/elasticsearch:/usr/share/elasticsearch/config
+        # - /etc/elasticsearch:/usr/share/elasticsearch/config
     restart: unless-stopped
 
   kibana:
