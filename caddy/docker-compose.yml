@@ -14,4 +14,3 @@ services:
       options:
         max-size: 100m
         max-file: "10"
-        max-age: "7d"
