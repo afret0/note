@@ -10966,7 +10966,6 @@ rules:
  - DOMAIN,lookup-api.apple.com,节点选择
  - DOMAIN-SUFFIX,go.dev,节点选择
  - DOMAIN-SUFFIX,golang.org,节点选择
- - DOMAIN-SUFFIX,bing.com,节点选择
  - DOMAIN-SUFFIX,cccat.io,节点选择
  - DOMAIN-SUFFIX,dubox.com,节点选择
  - DOMAIN-SUFFIX,duboxcdn.com,节点选择
