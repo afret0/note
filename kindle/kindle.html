@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Weather App</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1; /* Modified line-height */
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        #time {
+            font-size: 50px;
+        }
+
+        #weather {
+            font-size: 28px;
+        }
+
+        #temp {
+            font-size: 20px;
+        }
+
+        #humidity {
+            font-size: 20px;
+        }
+
+        #wind {
+            font-size: 20px;
+        }
+
+        #city {
+            font-size: 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var time = now.toLocaleTimeString();
+            $("#time").text(time);
+        }
+
+        function updateWeather() {
+            // Get weather data
+            $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=敦化市&appid=9a2f6e0a809dcbf1fb3d6ea88ad81be0&lang=zh_cn&units=metric", function (data) {
+                // Display weather information
+                var weather = data.weather[0].description;
+                var temp = data.main.temp;
+                var city = data.name;
+                var temp_max = data.main.temp_max;
+                var temp_min = data.main.temp_min;
+                var humidity = data.main.humidity;
+                var wind_speed = data.wind.speed;
+                var wind_direction = data.wind.deg;
+
+                $("#weather").text(weather + "/ " + temp + "℃");
+                $("#temp").text("温度: " + temp + "℃");
+                $("#humidity").text("湿度: " + humidity + "%");
+                $("#wind").text("风速: " + wind_speed + "m/s, 风向: " + wind_direction + "°");
+                $("#city").text("敦化");
+            });
+        }
+
+        $(document).ready(function () {
+            // Update time every second
+            setInterval(updateTime, 1000);
+
+            // Update weather every hour
+            setInterval(updateWeather, 10 * 60 * 1000);
+
+            // Get initial weather data
+            updateWeather();
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <h1>My Weather App</h1> -->
+    <p><span id="time"></span></p>
+    <p><span id="city"></span></p>
+    <p><span id="weather"></span></p>
+    <!-- <p><span id="temp"></span></p> -->
+    <p><span id="humidity"></span></p>
+    <p><span id="wind"></span></p>
+</body>
+
+</html>
