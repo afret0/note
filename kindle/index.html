@@ -6,23 +6,28 @@
     <title>My Weather App</title>
     <style>
         body {
-            background-color: #f2f2f2;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1; /* Modified line-height */
-            padding: 20px;
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(90deg);
+            transform-origin: top left;
+            writing-mode: horizontal-tb;
+            text-align: center;
+            font-size: 40px;
+            font-family: sans-serif;
         }
 
         h1 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 60px;
+            margin-bottom: 40px;
         }
 
         p {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 40px;
+            margin-bottom: 20px;
         }
 
         span {
@@ -30,36 +35,43 @@
         }
 
         #time {
-            font-size: 50px;
+            font-size: 200px;
+            margin-top: 20vh;
         }
 
         #weather {
-            font-size: 28px;
+            font-size: 50px;
         }
 
         #temp {
-            font-size: 20px;
+            font-size: 40px;
         }
 
         #humidity {
-            font-size: 20px;
+            font-size: 40px;
         }
 
         #wind {
-            font-size: 20px;
+            font-size: 40px;
         }
 
         #city {
-            font-size: 20px;
+            font-size: 40px;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function updateTime() {
             var now = new Date();
-            var time = now.toLocaleTimeString();
-            $("#time").text(time);
+            var hours = now.getUTCHours() + 8;
+            var minutes = now.getUTCMinutes();
+            var seconds = now.getUTCSeconds();
+            var time = hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            document.getElementById("time").innerHTML = time;
         }
+
+        // updateTime();
+        // setInterval(updateTime, 1000);
 
         function updateWeather() {
             // Get weather data
@@ -74,10 +86,10 @@
                 var wind_speed = data.wind.speed;
                 var wind_direction = data.wind.deg;
 
-                $("#weather").text(weather + "/ " + temp + "℃");
-                $("#temp").text("温度: " + temp + "℃");
-                $("#humidity").text("湿度: " + humidity + "%");
-                $("#wind").text("风速: " + wind_speed + "m/s, 风向: " + wind_direction + "°");
+                $("#weather").text(weather + " / " + temp + "℃"); /* Modified weather display */
+                $("#temp").text("温度: " + temp + "℃ / "); /* Modified temperature display */
+                $("#humidity").text("湿度: " + humidity + "% / "); /* Modified humidity display */
+                $("#wind").text("风速: " + wind_speed + "m/s, 风向: " + wind_direction + "°"); /* Modified wind display */
                 $("#city").text("敦化");
             });
         }
@@ -91,6 +103,7 @@
 
             // Get initial weather data
             updateWeather();
+            updateTime();
         });
     </script>
 </head>
