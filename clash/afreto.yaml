@@ -24,6 +24,10 @@ proxies:
     #   max-early-data: 2048
     #   early-data-header-name: Sec-WebSocket-Protocol
 
+    experimental:
+      mux:
+        enabled: true
+        concurrency: 8
   - name: "bwg"
     type: vmess
     server: bwg.afreto.top
@@ -40,6 +44,10 @@ proxies:
       path: /fire
       headers:
         Host: bwg.afreto.top
+    experimental:
+      mux:
+        enabled: true
+        concurrency: 8
 
 proxy-groups:
 
