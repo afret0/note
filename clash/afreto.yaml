@@ -10460,6 +10460,7 @@ rules:
  - DOMAIN,a771.dscq.akamai.net,节点选择
  - DOMAIN,testflight.apple.com,节点选择
  - DOMAIN-SUFFIX,aex.com,节点选择
+ - DOMAIN-SUFFIX,casiostore.com.cn,节点选择
  - DOMAIN-SUFFIX,google.com,节点选择
  - DOMAIN-SUFFIX,bibox.com,节点选择
  - DOMAIN-SUFFIX,binance.cc,节点选择
