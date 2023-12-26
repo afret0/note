@@ -26,6 +26,27 @@ proxies:
         enabled: true
         concurrency: 8
 
+  - name: "1.aliyun"
+    type: vmess
+    server: 1.aliyun.afreto.top
+    port: 443
+    uuid: deab8598-8f1e-4fc2-b993-ff5b6e9d5ff7
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: 1.aliyun.afreto.top
+    network: ws
+    ws-opts:
+      path: /fire
+      headers:
+        Host: 1.aliyun.afreto.top
+    experimental:
+      mux:
+        enabled: true
+        concurrency: 8
+
 
   - name: "bwg"
     type: vmess
@@ -55,6 +76,7 @@ proxy-groups:
     proxies:
       - aliyun
       - bwg
+      - 1.aliyun
       # - 全球直连
   - name: chatgpt
     type: select
