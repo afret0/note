@@ -29,7 +29,7 @@ proxies:
   - name: "1.aliyun"
     type: vmess
     server: 1.aliyun.afreto.top
-    port: 443
+    port: 444
     uuid: deab8598-8f1e-4fc2-b993-ff5b6e9d5ff7
     alterId: 0
     cipher: auto
