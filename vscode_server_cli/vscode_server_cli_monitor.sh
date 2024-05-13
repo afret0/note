@@ -51,5 +51,5 @@ function check_and_manage_resources {
 # 主循环，每分钟检查一次
 while true; do
     check_and_manage_resources
-    sleep 60
+    sleep 30
 done
