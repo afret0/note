@@ -5,10 +5,12 @@ services:
         container_name: redis
         image: redis
         environment:
+            - PUID=1000
+            - PGID=1000
             - ALLOW_EMPTY_PASSWORD=yes
         command: redis-server /etc/redis/redis.conf
         ports: 
-            - 10117:6379
+            - 6379:6379
         volumes: 
             - /etc/redis:/etc/redis/
             - /data/redis/data:/data
