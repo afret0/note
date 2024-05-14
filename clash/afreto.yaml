@@ -47,6 +47,27 @@ proxies:
         enabled: true
         concurrency: 8
 
+  - name: "2.aliyun"
+    type: vmess
+    server: 2.aliyun.afreto.top
+    port: 443
+    uuid: deab8598-8f1e-4fc2-b993-ff5b6e9d53f7
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: 2.aliyun.afreto.top
+    network: ws
+    ws-opts:
+      path: /afreto
+      headers:
+        Host: 2.aliyun.afreto.top
+    experimental:
+      mux:
+        enabled: true
+        concurrency: 8
+
 
   - name: "bwg"
     type: vmess
@@ -77,45 +98,43 @@ proxy-groups:
       - aliyun
       - bwg
       - 1.aliyun
+      - 2.aliyun
       # - 全球直连
   - name: chatgpt
     type: select
     proxies:
       - bwg
-      - aliyun
+      - 节点选择
 
   - name: NETFLIX
     type: select
     proxies:
       - 节点选择
       - 全球直连
-      - aliyun
       - bwg
   - name: 国外媒体
     type: select
     proxies:
       - 节点选择
       - 全球直连
-      - aliyun
   - name:  微软服务
     type: select
     proxies:
-      -  全球直连
       -  节点选择
-      - aliyun
+      -  全球直连
       - bwg
   - name:  电报信息
     type: select
     proxies:
       -  节点选择
       -  全球直连
-      - aliyun
+      - bwg
   - name:  苹果服务
     type: select
     proxies:
       -  节点选择
       -  全球直连
-      - aliyun
+      - bwg
   - name:  全球直连
     type: select
     proxies:
@@ -125,12 +144,11 @@ proxy-groups:
     proxies:
       - REJECT
       - DIRECT
-  - name:  漏网之鱼
+  - name: 漏网之鱼
     type: select
     proxies:
       -  节点选择
       -  全球直连
-      - aliyun
 rules:
  - DOMAIN-SUFFIX,local,全球直连
  - DOMAIN,umeng.com,全球拦截
