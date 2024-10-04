@@ -1,18 +1,14 @@
 version: "3"
 
 services:
-  caddy:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  caddy:  
+    image: caddy
     container_name: caddy
     volumes:
       - /etc/caddy:/etc/caddy
       - /data/caddy:/data
     network_mode: host
     restart: unless-stopped
-    # environment:
-      # - CF_API_TOKEN=2wbgkvAFxzZyW_s8TN6MLbUJYhyEkRWdAdVy_30q
     logging:
       driver: json-file
       options:
