@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  caddy:  
+    # image: caddy
+    image: iarekylew00t/caddy-cloudflare:latest
+    container_name: caddy
+    volumes:
+      - /etc/caddy:/etc/caddy
+      - /data/caddy:/data
+    network_mode: host
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: "10"
