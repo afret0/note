@@ -1,0 +1,15 @@
+FROM prom/prometheus
+
+COPY prometheus.yml /etc/prometheus/prometheus.yml
+
+EXPOSE 9090
+
+ENTRYPOINT [ "prometheus" ]
+CMD [ "--config.file=/etc/prometheus/prometheus.yml", \
+      "--storage.tsdb.path=/prometheus" ]
+
+
+
+
+# docker build -t registry.cn-hangzhou.aliyuncs.com/kiwi0325/prometheus:1 .
+# docker run -d -p 9090:9090 my-prometheus
