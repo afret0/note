@@ -1,9 +1,5 @@
-From caddy
+FROM caddy
 
 COPY ./Caddyfile /etc/caddy/
 
-EXPOSE 80
-EXPOSE 443
-EXPOSE 10024
-
-
+EXPOSE 1-65535

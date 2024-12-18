@@ -4,6 +4,7 @@ services:
     v2raya:
         container_name: v2raya
         image: mzz2017/v2raya
+        privileged: true
         environment:
             - V2RAYA_LOG_FILE=/tmp/v2raya.log
         user: root
@@ -18,6 +19,7 @@ services:
             - /etc/resolv.conf:/etc/resolv.conf
             - /etc/v2raya:/etc/v2raya
         restart: unless-stopped
+    
     
 # # run v2raya
 # docker run -d \

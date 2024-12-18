@@ -21,13 +21,58 @@ proxies:
       path: /fire
       headers:
         Host: aliyun.afreto.top
-    #   max-early-data: 2048
-    #   early-data-header-name: Sec-WebSocket-Protocol
+    experimental:
+      mux:
+        enabled: true
+        concurrency: 8
+
+  - name: "1.aliyun"
+    type: vmess
+    server: 1.aliyun.afreto.top
+    port: 443
+    uuid: deab8598-8f1e-4fc2-b993-ff5b6e9d5ff7
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: 1.aliyun.afreto.top
+    network: ws
+    ws-opts:
+      path: /afreto
+      headers:
+        Host: 1.aliyun.afreto.top
+    experimental:
+      mux:
+        enabled: true
+        concurrency: 8
+
+  - name: "2.aliyun"
+    type: vmess
+    server: 2.aliyun.afreto.top
+    port: 443
+    uuid: deab8598-8f1e-4fc2-b993-ff5b6e9d53f7
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: 2.aliyun.afreto.top
+    network: ws
+    ws-opts:
+      path: /afreto
+      headers:
+        Host: 2.aliyun.afreto.top
+    experimental:
+      mux:
+        enabled: true
+        concurrency: 8
+
 
   - name: "bwg"
     type: vmess
     server: bwg.afreto.top
-    port: 449
+    port: 443
     uuid: 2af23a0b-b9c5-4b42-88bd-5a5e24dc0105
     alterId: 0
     cipher: auto
@@ -40,6 +85,10 @@ proxies:
       path: /fire
       headers:
         Host: bwg.afreto.top
+    experimental:
+      mux:
+        enabled: true
+        concurrency: 8
 
 proxy-groups:
 
@@ -48,57 +97,44 @@ proxy-groups:
     proxies:
       - aliyun
       - bwg
+      - 1.aliyun
+      - 2.aliyun
       # - 全球直连
   - name: chatgpt
     type: select
     proxies:
       - bwg
-      - aliyun
+      - 节点选择
 
   - name: NETFLIX
     type: select
     proxies:
       - 节点选择
       - 全球直连
-      - aliyun
       - bwg
-  # - name:  广告拦截
-  #   type: select
-  #   proxies:
-  #     -  全球拦截
-  #     -  全球直连
-  #     -  节点选择
-  # - name:  运营劫持
-  #   type: select
-  #   proxies:
-  #     - 全球拦截
-  #     - 全球直连
-  #     - 节点选择
   - name: 国外媒体
     type: select
     proxies:
       - 节点选择
       - 全球直连
-      - aliyun
   - name:  微软服务
     type: select
     proxies:
-      -  全球直连
       -  节点选择
-      - aliyun
+      -  全球直连
       - bwg
   - name:  电报信息
     type: select
     proxies:
       -  节点选择
       -  全球直连
-      - aliyun
+      - bwg
   - name:  苹果服务
     type: select
     proxies:
       -  节点选择
       -  全球直连
-      - aliyun
+      - bwg
   - name:  全球直连
     type: select
     proxies:
@@ -108,16 +144,12 @@ proxy-groups:
     proxies:
       - REJECT
       - DIRECT
-  - name:  漏网之鱼
+  - name: 漏网之鱼
     type: select
     proxies:
       -  节点选择
       -  全球直连
-      - aliyun
 rules:
-#  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/base_filter.txt,节点选择
-#  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/chines_filter.txt,节点选择
-#  - RULE-SET,https://afreto.oss-cn-hangzhou.aliyuncs.com/clash/search_filter.txt,节点选择
  - DOMAIN-SUFFIX,local,全球直连
  - DOMAIN,umeng.com,全球拦截
  - DOMAIN,umengcloud.com,全球拦截
@@ -539,22 +571,9 @@ rules:
  - DOMAIN-SUFFIX,tongji.home.soufun.com,全球拦截
  - DOMAIN-SUFFIX,admob.com,全球拦截
  - DOMAIN-SUFFIX,ads.gmodules.com,全球拦截
- - DOMAIN-SUFFIX,ads.google.com,全球拦截
- - DOMAIN-SUFFIX,adservice.google.com,全球拦截
- - DOMAIN-SUFFIX,afd.l.google.com,全球拦截
- - DOMAIN-SUFFIX,badad.googleplex.com,全球拦截
  - DOMAIN-SUFFIX,csi.gstatic.com,全球拦截
  - DOMAIN-SUFFIX,doubleclick.com,全球拦截
  - DOMAIN-SUFFIX,doubleclick.net,全球拦截
- - DOMAIN-SUFFIX,google-analytics.com,全球拦截
- - DOMAIN-SUFFIX,googleadservices.com,全球拦截
- - DOMAIN-SUFFIX,googleadsserving.cn,全球拦截
- - DOMAIN-SUFFIX,googlecommerce.com,全球拦截
- - DOMAIN-SUFFIX,googlesyndication.com,全球拦截
- - DOMAIN-SUFFIX,mobileads.google.com,全球拦截
- - DOMAIN-SUFFIX,pagead-tpc.l.google.com,全球拦截
- - DOMAIN-SUFFIX,pagead.google.com,全球拦截
- - DOMAIN-SUFFIX,pagead.l.google.com,全球拦截
  - DOMAIN-SUFFIX,service.urchin.com,全球拦截
  - DOMAIN-SUFFIX,ads.union.jd.com,全球拦截
  - DOMAIN-SUFFIX,c-nfa.jd.com,全球拦截
@@ -1178,7 +1197,6 @@ rules:
  - IP-CIDR6,fe80::/10,全球直连,no-resolve
  - IP-CIDR6,fd00::/8,全球直连,no-resolve
  - DOMAIN-KEYWORD,1drv,微软服务
- - DOMAIN-KEYWORD,microsoft,微软服务
  - DOMAIN-SUFFIX,aadrm.com,微软服务
  - DOMAIN-SUFFIX,acompli.com,微软服务
  - DOMAIN-SUFFIX,acompli.net,微软服务
@@ -1190,7 +1208,6 @@ rules:
  - DOMAIN-SUFFIX,azure.net,微软服务
  - DOMAIN-SUFFIX,azureedge.net,微软服务
  - DOMAIN-SUFFIX,azurerms.com,微软服务
- - DOMAIN-SUFFIX,bing.com,微软服务
  - DOMAIN-SUFFIX,cloudapp.net,微软服务
  - DOMAIN-SUFFIX,cloudappsecurity.com,微软服务
  - DOMAIN-SUFFIX,edgesuite.net,微软服务
@@ -1255,24 +1272,6 @@ rules:
  - DOMAIN,bdtj.tagtic.cn,全球直连
  - DOMAIN,log.mmstat.com,全球直连
  - DOMAIN,sycm.mmstat.com,全球直连
- - DOMAIN-SUFFIX,blog.google,全球直连
- - DOMAIN-SUFFIX,googletraveladservices.com,全球直连
- - DOMAIN,clientservices.googleapis.com,全球直连
- - DOMAIN,dl.google.com,全球直连
- - DOMAIN,dl.l.google.com,全球直连
- - DOMAIN,update.googleapis.com,全球直连
- - DOMAIN,translate.googleapis.com,全球直连
- - DOMAIN,fonts.googleapis.com,全球直连
- - DOMAIN,fonts.gstatic.com,全球直连
- - DOMAIN,mtalk.google.com,全球直连
- - DOMAIN,alt1-mtalk.google.com,全球直连
- - DOMAIN,alt2-mtalk.google.com,全球直连
- - DOMAIN,alt3-mtalk.google.com,全球直连
- - DOMAIN,alt4-mtalk.google.com,全球直连
- - DOMAIN,alt5-mtalk.google.com,全球直连
- - DOMAIN,alt6-mtalk.google.com,全球直连
- - DOMAIN,alt7-mtalk.google.com,全球直连
- - DOMAIN,alt8-mtalk.google.com,全球直连
  - DOMAIN,pubads.g.doubleclick.net,全球直连
  - DOMAIN,fairplay.l.qq.com,全球直连
  - DOMAIN,livew.l.qq.com,全球直连
@@ -1352,7 +1351,8 @@ rules:
  - DOMAIN-SUFFIX,intellij.net,chatgpt
  - DOMAIN-SUFFIX,api.app.prod.grazie.aws.intellij.net,chatgpt
  - DOMAIN-SUFFIX,jetbrains.com,chatgpt
- - DOMAIN-SUFFIX,bard.google.com,chatgpt
+ - DOMAIN-SUFFIX,copilot.microsoft.com,chatgpt
+ - DOMAIN-SUFFIX,bing.com,chatgpt
  - DOMAIN-SUFFIX,hz.youku.com,全球拦截
  - DOMAIN-SUFFIX,l.ykimg.com,全球拦截
  - DOMAIN-SUFFIX,lstat.youku.com,全球拦截
@@ -2520,7 +2520,6 @@ rules:
  - DOMAIN-SUFFIX,aerserv.com,全球拦截
  - DOMAIN-SUFFIX,aes01.com,全球拦截
  - DOMAIN-SUFFIX,aeventlog.beacon.qq.com,全球拦截
- - DOMAIN-SUFFIX,afd.l.google.com,全球拦截
  - DOMAIN-SUFFIX,aff.eteachergroup.com,全球拦截
  - DOMAIN-SUFFIX,aff.lmgtfy.com,全球拦截
  - DOMAIN-SUFFIX,aff.marathonbet.com,全球拦截
@@ -2545,7 +2544,6 @@ rules:
  - DOMAIN-SUFFIX,afpimages.eastday.com,全球拦截
  - DOMAIN-SUFFIX,afpmm.alicdn.com,全球拦截
  - DOMAIN-SUFFIX,afptrack.csbew.com,全球拦截
- - DOMAIN-SUFFIX,afs.googlesyndication.com,全球拦截
  - DOMAIN-SUFFIX,ag.nukefans.net,全球拦截
  - DOMAIN-SUFFIX,agenda.complex.com,全球拦截
  - DOMAIN-SUFFIX,ag-gb.marketgid.com,全球拦截
@@ -2897,7 +2895,6 @@ rules:
  - DOMAIN-SUFFIX,backup.lumion3d.com,全球拦截
  - DOMAIN-SUFFIX,backup.lumion3d.net,全球拦截
  - DOMAIN-SUFFIX,bad1.51gxqm.com,全球拦截
- - DOMAIN-SUFFIX,badad.googleplex.com,全球拦截
  - DOMAIN-SUFFIX,badao37.net,全球拦截
  - DOMAIN-SUFFIX,bai3.gushiwen.org,全球拦截
  - DOMAIN-SUFFIX,baiapk.com,全球拦截
@@ -3071,7 +3068,6 @@ rules:
  - DOMAIN-SUFFIX,bkdg.net,全球拦截
  - DOMAIN-SUFFIX,bl.wavecdn.de,全球拦截
  - DOMAIN-SUFFIX,bla.gtimg.com,全球拦截
- - DOMAIN-SUFFIX,blaaaa12.googlecode.com,全球拦截
  - DOMAIN-SUFFIX,blb.winasdaq.com,全球拦截
  - DOMAIN-SUFFIX,bllbaby.cn,全球拦截
  - DOMAIN-SUFFIX,blogad01.myweb.hinet.net,全球拦截
@@ -4844,7 +4840,6 @@ rules:
  - DOMAIN-SUFFIX,gog9.qzdfc.com,全球拦截
  - DOMAIN-SUFFIX,go-mpulse.net,全球拦截
  - DOMAIN-SUFFIX,good.ta80.com,全球拦截
- - DOMAIN-SUFFIX,googlecommerce.com,全球拦截
  - DOMAIN-SUFFIX,goolpter.com,全球拦截
  - DOMAIN-SUFFIX,gopig.io,全球拦截
  - DOMAIN-SUFFIX,gorgon.youdao.com,全球拦截
@@ -6515,7 +6510,6 @@ rules:
  - DOMAIN-SUFFIX,mobadme.jp,全球拦截
  - DOMAIN-SUFFIX,mobfox.com,全球拦截
  - DOMAIN-SUFFIX,mobgi.com,全球拦截
- - DOMAIN-SUFFIX,mobileads.google.com,全球拦截
  - DOMAIN-SUFFIX,mobileads.msn.com,全球拦截
  - DOMAIN-SUFFIX,mobileapptracking.com,全球拦截
  - DOMAIN-SUFFIX,mobiledissector.com,全球拦截
@@ -6890,10 +6884,6 @@ rules:
  - DOMAIN-SUFFIX,padsdel2.cdnads.com,全球拦截
  - DOMAIN-SUFFIX,page.acm.dzwww.com,全球拦截
  - DOMAIN-SUFFIX,page.xywy.com,全球拦截
- - DOMAIN-SUFFIX,pagead.google.com,全球拦截
- - DOMAIN-SUFFIX,pagead.l.google.com,全球拦截
- - DOMAIN-SUFFIX,pagead2.googlesyndication.com,全球拦截
- - DOMAIN-SUFFIX,pagead-tpc.l.google.com,全球拦截
  - DOMAIN-SUFFIX,pagechoice.com,全球拦截
  - DOMAIN-SUFFIX,pagechoice.net,全球拦截
  - DOMAIN-SUFFIX,pagechoicemotu.gentags.net,全球拦截
@@ -8213,7 +8203,6 @@ rules:
  - DOMAIN-SUFFIX,toutiao.2haha.com,全球拦截
  - DOMAIN-SUFFIX,toutiao.jxnews.com.cn,全球拦截
  - DOMAIN-SUFFIX,tp.sgcn.com,全球拦截
- - DOMAIN-SUFFIX,tpc.googlesyndication.com,全球拦截
  - DOMAIN-SUFFIX,tpe163.com,全球拦截
  - DOMAIN-SUFFIX,tpush.html5.qq.com,全球拦截
  - DOMAIN-SUFFIX,tqd.ntpddq.com,全球拦截
@@ -8499,7 +8488,6 @@ rules:
  - DOMAIN-SUFFIX,video.cooguo.com,全球拦截
  - DOMAIN-SUFFIX,video.ureport.push.qq.com,全球拦截
  - DOMAIN-SUFFIX,video.wap.mpush.qq.com,全球拦截
- - DOMAIN-SUFFIX,video-ad-stats.googlesyndication.com,全球拦截
  - DOMAIN-SUFFIX,videondun.com,全球拦截
  - DOMAIN-SUFFIX,videopush.baidu.com,全球拦截
  - DOMAIN-SUFFIX,viglink.com,全球拦截
@@ -9414,11 +9402,6 @@ rules:
  - DOMAIN-SUFFIX,atrace.chelaile.net.cn,全球拦截
  - DOMAIN-SUFFIX,logs.chelaile.net.cn,全球拦截
  - DOMAIN-SUFFIX,doubleclick.net,全球拦截
- - DOMAIN-SUFFIX,googleadservices.com,全球拦截
- - DOMAIN-SUFFIX,googleadsserving.cn,全球拦截
- - DOMAIN-SUFFIX,googlesyndication.com,全球拦截
- - DOMAIN-SUFFIX,googletagmanager.com,全球拦截
- - DOMAIN-SUFFIX,googletagservices.com,全球拦截
  - DOMAIN-SUFFIX,da.mgtv.com,全球拦截
  - DOMAIN-SUFFIX,da.hunantv.com,全球拦截
  - DOMAIN-SUFFIX,log.hunantv.com,全球拦截
@@ -9655,8 +9638,6 @@ rules:
  - DOMAIN-SUFFIX,4paradigm.com,全球拦截
  - DOMAIN-SUFFIX,catch.gift,全球拦截
  - DOMAIN-SUFFIX,pubnative.net,全球拦截
- - DOMAIN-SUFFIX,www.googleadservices.com,全球拦截
- - DOMAIN-SUFFIX,www.google-analytics.com,全球拦截
  - DOMAIN-SUFFIX,fusion.qq.com,全球拦截
  - DOMAIN-SUFFIX,ios.bugly.qq.com,全球拦截
  - DOMAIN-SUFFIX,wup.imtt.qq.com,全球拦截
@@ -10421,10 +10402,8 @@ rules:
  - DOMAIN-SUFFIX,wetv.vip,国外媒体
  - DOMAIN-SUFFIX,wetvinfo.com,国外媒体
  - IP-CIDR,150.109.28.51/32,国外媒体,no-resolve
- - DOMAIN-SUFFIX,googlevideo.com,国外媒体
  - DOMAIN-SUFFIX,youtube.com,国外媒体
  - DOMAIN-SUFFIX,ytimg.com,国外媒体
- - DOMAIN,youtubei.googleapis.com,国外媒体
  - DOMAIN,yt3.ggpht.com,国外媒体
  - DOMAIN-SUFFIX,t.me,电报信息
  - DOMAIN-SUFFIX,tdesktop.com,电报信息
@@ -10454,6 +10433,9 @@ rules:
  - DOMAIN,testflight.apple.com,节点选择
  - DOMAIN-SUFFIX,aex.com,节点选择
  - DOMAIN-SUFFIX,google.com,节点选择
+ - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
+ - DOMAIN-SUFFIX,services.googleapis.cn,节点选择
+ - DOMAIN-SUFFIX,casiostore.com.cn,节点选择
  - DOMAIN-SUFFIX,bibox.com,节点选择
  - DOMAIN-SUFFIX,binance.cc,节点选择
  - DOMAIN-SUFFIX,binance.com,节点选择
@@ -10498,7 +10480,6 @@ rules:
  - DOMAIN-SUFFIX,gvt3.com,节点选择
  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
  - DOMAIN-SUFFIX,ytimg.com,节点选择
- - DOMAIN-KEYWORD,google,节点选择
  - DOMAIN-KEYWORD,.blogspot.,节点选择
  - DOMAIN-SUFFIX,line.me,节点选择
  - DOMAIN-SUFFIX,line-apps.com,节点选择
@@ -11105,7 +11086,6 @@ rules:
  - DOMAIN-SUFFIX,windowsupdate.microsoft.com,全球直连
  - DOMAIN,download.microsoft.com,全球直连
  - DOMAIN,wustat.windows.com,全球直连
- - DOMAIN,ntservicepack.microsoft.com,全球直连
  - DOMAIN-SUFFIX,163.com,全球直连
  - DOMAIN-SUFFIX,126.com,全球直连
  - DOMAIN-SUFFIX,126.net,全球直连
