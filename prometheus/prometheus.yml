@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 15s # 设置抓取间隔为15秒
+  evaluation_interval: 15s # 设置规则评估间隔为15秒
+  scrape_timeout: 10s
+
+scrape_configs:
+  - job_name: "sample" # 任务名称
+    static_configs:
+      - targets: ["sample-svr:1008"] # 目标地址

@@ -5,11 +5,13 @@ COPY prometheus.yml /etc/prometheus/prometheus.yml
 EXPOSE 9090
 
 ENTRYPOINT [ "prometheus" ]
-CMD [ "--config.file=/etc/prometheus/prometheus.yml", \
-      "--storage.tsdb.path=/prometheus" ]
+CMD [ "--config.file=/etc/prometheus/prometheus.yml","--storage.tsdb.path=/prometheus" ,"--storage.tsdb.retention.size=10GB"]
 
 
 
 
 # docker build -t registry.cn-hangzhou.aliyuncs.com/kiwi0325/prometheus:1 .
+# 使用 buildx 构建多架构镜像
+# docker buildx create --use
+# docker buildx build --platform linux/amd64,linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/kiwi0325/prometheus:2 --push .
 # docker run -d -p 9090:9090 my-prometheus
