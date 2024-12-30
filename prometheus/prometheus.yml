@@ -7,3 +7,7 @@ scrape_configs:
   - job_name: "sample" # 任务名称
     static_configs:
       - targets: ["sample-svr:1008"] # 目标地址
+
+  - job_name: "slot-machine" # 任务名称
+    static_configs:
+      - targets: ["lot-machine-svr:10050"] # 目标地址

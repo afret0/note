@@ -13,5 +13,5 @@ CMD [ "--config.file=/etc/prometheus/prometheus.yml","--storage.tsdb.path=/prome
 # docker build -t registry.cn-hangzhou.aliyuncs.com/kiwi0325/prometheus:1 .
 # 使用 buildx 构建多架构镜像
 # docker buildx create --use
-# docker buildx build --platform linux/amd64,linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/kiwi0325/prometheus:2 --push .
+# docker buildx build --platform linux/amd64,linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/kiwi0325/prometheus:241230-01 --push .
 # docker run -d -p 9090:9090 my-prometheus
