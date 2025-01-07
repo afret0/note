@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  freshrss:
+  prometheus:
     container_name: prometheus
     image: prom/prometheus
     environment: 
@@ -10,8 +10,8 @@ services:
     ports:
       - 9090:9090
     restart: unless-stopped
-    # volumes:
-      # - /data/freshrss/data:/var/www/FreshRSS/data
+    volumes:
+      - /etc/prometheus:/etc/prometheus
       # - /data/freshrss/ext:/var/www/FreshRSS/extensions
       # - /data/freshrss/config:/config
     logging:
