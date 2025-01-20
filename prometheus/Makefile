@@ -1,4 +1,4 @@
-VERSION = 241230-01
+VERSION = 241230-02
 prod:
 
 	docker build -t registry.cn-hangzhou.aliyuncs.com/kiwi0325/prometheus:$(VERSION) .
