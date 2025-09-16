@@ -1,3 +1,5 @@
-:10024 {
-    respond "Hello, kitty"
+:10036 {
+    reverse_proxy * account-svr:10036 {
+        header_up -Origin
+        }
 }
