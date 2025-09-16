@@ -1,5 +1,7 @@
 :10036 {
-    reverse_proxy * account-svr:10036 {
-        header_up -Origin
+    reverse_proxy * h2c://account-svr:10036 {
+        transport http {
+            versions h2c
         }
+    }
 }
