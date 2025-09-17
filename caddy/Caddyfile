@@ -1,7 +1,22 @@
 :10036 {
+    log {
+        output stdout
+        format json
+    }
+    
+    # 完全透明的 gRPC 代理
     reverse_proxy * h2c://account-svr:10036 {
+
+        flush_interval -1
+
         transport http {
             versions h2c
+            # 保持原始连接特性
+            compression off
         }
+        
+        # 最小化头部修改
+        header_up Host {upstream_hostport}
+        
     }
 }
