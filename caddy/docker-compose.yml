@@ -1,17 +1,29 @@
-version: "3"
+version: "3.8"
 
 services:
-  caddy:  
-    # image: caddy
+  caddy:
     image: iarekylew00t/caddy-cloudflare:latest
+    # 如果需要自定义构建（复制 Caddyfile）可改为：build: .
     container_name: caddy
-    volumes:
-      - /etc/caddy:/etc/caddy
-      - /data/caddy:/data
-    network_mode: host
     restart: unless-stopped
+    # 在 macOS / Docker Desktop 上不能使用 host 网络来直接暴露端口，因此使用 ports 映射
+    # 如果部署到 Linux 并且确实想用 host 网络，可删除 ports 并恢复 network_mode: host
+    ports:
+      - "10136:10136"   # gRPC h2c 代理端口
+      # - "80:80"       # 如需同时代理 HTTP
+      # - "443:443"     # 如需同时代理 HTTPS（需要证书支持）
+    volumes:
+      # 挂载当前目录下的 Caddyfile 到容器（优先保证使用仓库里的配置）
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      # 数据目录（证书、自动 https 缓存等）
+      - caddy_data:/data
+      # 可选：自定义配置目录（如果你未来添加更多 *.caddy 文件）
+      # - ./conf.d:/etc/caddy/conf.d:ro
     logging:
       driver: json-file
       options:
         max-size: 100m
         max-file: "10"
+
+volumes:
+  caddy_data:
