@@ -1,22 +1,16 @@
-:10036 {
-    log {
-        output stdout
-        format json
+:1008 {
+    reverse_proxy test-ecs.kekeyuyin.com:1008 {
+        
     }
+}
 
-    reverse_proxy account-svr:10036 {
+:1009 {
+    reverse_proxy test-ecs.kekeyuyin.com:1009 {
         transport http {
             versions h2c 2
         }
-        header_up Host {upstream_hostport}
     }
 }
 
-:10035 {
-    reverse_proxy * http://account-svr:10035
-}
 
 
-:10016 {
-    reverse_proxy * http://payment-svr:10016
-}
