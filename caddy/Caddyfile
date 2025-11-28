@@ -1,10 +1,20 @@
+{
+    log {
+        output stdout
+        format json
+        level INFO
+    }
+}
+
 :1008 {
+    log
     reverse_proxy test-ecs.kekeyuyin.com:1008 {
         
     }
 }
 
 :1009 {
+    log
     reverse_proxy test-ecs.kekeyuyin.com:1009 {
         transport http {
             versions h2c 2
