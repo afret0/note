@@ -6,10 +6,15 @@
     }
 }
 
+:10016 {
+    log
+    reverse_proxy test-ecs.kekeyuyin.com:10016 {
+    }
+}
+
 :1008 {
     log
     reverse_proxy test-ecs.kekeyuyin.com:1008 {
-        
     }
 }
 
