@@ -1,6 +1,6 @@
 FROM alpine:3.23
 
-RUN apk add --no-cache tzdata bash busybox-extras 
+RUN apk add --no-cache tzdata bash busybox-extras curl
 
 
 
